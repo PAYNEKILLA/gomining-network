@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --gm-bg: #0b0b12;
+  --gm-bg-soft: #11111a;
+  --gm-text: #f7f8fa;
+  --gm-muted: #a6adbb;
+
+  /* GoMining Purple */
+  --gm-purple: #6c41ff;         /* primary */
+  --gm-purple-600: #5a36d9;
+  --gm-purple-700: #4b2fb3;
+
+  --gm-success: #34d399;
+  --gm-danger: #ff5d5d;
+
+  --gm-radius: 16px;
+  --gm-card: 1px solid rgba(255,255,255,.06);
+  --gm-ring: 0 0 0 2px rgba(108,65,255,.25);
+}
+
+body {
+  background: var(--gm-bg);
+  color: var(--gm-text);
+}
+
+/* Re‑usable UI bits */
+.gm-btn {
+  border-radius: calc(var(--gm-radius) - 4px);
+  padding: 10px 16px;
+  font-weight: 700;
+  background: var(--gm-purple);
+  color: #0b0b12;
+  box-shadow: 0 8px 24px rgba(108,65,255,.35);
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+}
+.gm-btn:hover { background: var(--gm-purple-600); }
+.gm-btn:active { transform: translateY(1px); }
+
+.gm-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gm-bg-soft); border: var(--gm-card);
+  border-radius: 999px; padding: 8px 12px; color: var(--gm-text);
+}
+
+.gm-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: var(--gm-card); border-radius: var(--gm-radius);
+}
